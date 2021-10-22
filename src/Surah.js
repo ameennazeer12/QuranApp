@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react'
 
 
 const Surah = ({surahNo,setSurahNo,handleSubmit}) => {
-    const [url,setUrl] = useState(`http://api.alquran.cloud/v1/surah/${surahNo}`)
+    const [url,setUrl] = useState(`https://api.alquran.cloud/v1/surah/${surahNo}`)
     const [ayah, setAyah] = useState([])
     const [surahName,setSurahName] = useState('')
     // const [surahNo,setSurahNo] = useState(114)
@@ -29,7 +29,7 @@ const Surah = ({surahNo,setSurahNo,handleSubmit}) => {
         
         if (srno <= 114){
             setSurahNo(srno)
-            setUrl(`http://api.alquran.cloud/v1/surah/${srno}`)
+            setUrl(`https://api.alquran.cloud/v1/surah/${srno}`)
         }
         else{
             return
@@ -41,7 +41,7 @@ const Surah = ({surahNo,setSurahNo,handleSubmit}) => {
         
         if (srno >0){
             setSurahNo(srno)
-            setUrl(`http://api.alquran.cloud/v1/surah/${srno}`)
+            setUrl(`https://api.alquran.cloud/v1/surah/${srno}`)
         }
         else{
             return
@@ -72,8 +72,9 @@ const Surah = ({surahNo,setSurahNo,handleSubmit}) => {
             </ol>
             <div className="col text-center">
                 <button className="btn btn-space btn-secondary" type="submit" onClick={handlePrevious}>Previous</button>
-                <button className="btn btn-space btn-primary" type="submit" onClick={handleSubmit}>Home</button>
                 <button className="btn btn-space btn-secondary" type="submit" onClick={handleNext}>Next</button>
+                <button className="btn btn-space btn-primary" type="submit" onClick={handleSubmit}>Home</button>
+                
             </div>
 
         </div>
