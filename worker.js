@@ -2,8 +2,7 @@ const CACHE_NAME = 'quranapp';
 const urlsToCache = [
   '/',
   '/completed',
-  'https://api.alquran.cloud/v1/surah'
-  
+  '/offline.html'
 ];
 
 // Install a service worker
