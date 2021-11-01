@@ -63,13 +63,26 @@ const Surah = ({surahNo,setSurahNo,handleSubmit}) => {
                 </h2>
             </div>
 
-            <ol className="list-group list-group-numbered w-100 p-3 dir">
-            {ayah.map((perayah) => {
-                return (
-                    <li className="list-group-item" key={perayah.number}>{perayah.text}</li>
-                )
+            <div>
+                {surahNo!==1 && surahNo!==9
+                ?<ol className="list-group list-group-numbered w-100 p-3 dir">
+                    <h1 className='h1 text-center'>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</h1>
+                    {ayah.map((perayah) => {
+                        return(
+                            <li className="list-group-item" key={perayah.number}>{perayah.text.replace('بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ',' ')}</li>
+                        )
+                })}
+                    </ol>
+                :<ol className="list-group list-group-numbered w-100 p-3 dir">
+                    {ayah.map((perayah) => {
+                    return(
+                        <li className="list-group-item" key={perayah.number}>{perayah.text}</li>
+                    )
             })}
             </ol>
+            }
+
+            </div>
             <div className="col text-center">
                 <button className="btn btn-space btn-secondary" type="submit" onClick={handlePrevious}>Previous</button>
                 <button className="btn btn-space btn-secondary" type="submit" onClick={handleNext}>Next</button>
